@@ -1,5 +1,6 @@
-import React from 'react';
-import { Card, CardContent, Typography, Grid } from '@mui/material';
+import React from "react";
+import PropTypes from "prop-types";
+import { Card, CardContent, Typography, Grid } from "@mui/material";
 
 const UnitDetail = ({ unit }) => {
   return (
@@ -13,7 +14,7 @@ const UnitDetail = ({ unit }) => {
         </Typography>
         <Grid container spacing={2}>
           {Object.entries(unit).map(([key, value]) => {
-            if (typeof value === 'object' && value !== null) {
+            if (typeof value === "object" && value !== null) {
               return (
                 <Grid item xs={12} sm={6} key={key}>
                   <Typography variant="subtitle1" color="textPrimary">
@@ -44,6 +45,13 @@ const UnitDetail = ({ unit }) => {
       </CardContent>
     </Card>
   );
+};
+
+UnitDetail.propTypes = {
+  unit: PropTypes.shape({
+    name: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired
+  }).isRequired
 };
 
 export default UnitDetail;

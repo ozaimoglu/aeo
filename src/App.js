@@ -1,9 +1,9 @@
-import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Home from './pages/Home';
-import Units from './pages/Units';
-import UnitDetailPage from './pages/UnitDetailPage';
-import './styles/main.scss';
+import React from "react";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import Home from "./pages/Home";
+import Units from "./pages/Units";
+import UnitDetailPage from "./pages/UnitDetailPage";
+import "./styles/main.scss";
 
 const App = () => {
   return (

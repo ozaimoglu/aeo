@@ -1,14 +1,14 @@
-import React from 'react';
-import { useParams } from 'react-router-dom';
-import { useSelector } from 'react-redux';
-import Header from '../components/Header';
-import UnitDetail from '../components/UnitDetail';
-import { Container, Box } from '@mui/material';
+import React from "react";
+import { useParams } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { Container, Box } from "@mui/material";
+import Header from "../components/Header";
+import UnitDetail from "../components/UnitDetail";
 
 const UnitDetailPage = () => {
   const { unitId } = useParams();
   const unit = useSelector((state) =>
-    state.units.units.find((unit) => unit.id === parseInt(unitId))
+    state.units.units.find((u) => u.id === parseInt(unitId))
   );
 
   if (!unit) return <div>Unit not found</div>;

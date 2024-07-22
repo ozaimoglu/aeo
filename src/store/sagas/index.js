@@ -1,21 +1,22 @@
-import { all, call, put, takeEvery } from 'redux-saga/effects';
-import { fetchUnitsRequest, fetchUnitsSuccess, fetchUnitsFailure } from '../reducers/unitsReducer';
-import unitsData from '../../age-of-empires-units.json';
+import { put, takeEvery } from "redux-saga/effects";
+import {
+  fetchUnitsRequest,
+  fetchUnitsSuccess,
+  fetchUnitsFailure
+} from "../slices/unitSlice";
+import unitsData from "../../age-of-empires-units.json";
 
-function* fetchUnits() {
+function* fetchUnitsSaga() {
   try {
-    // Mock API call
-    const units = unitsData.units;
+    const { units } = unitsData;
     yield put(fetchUnitsSuccess(units));
   } catch (error) {
-    yield put(fetchUnitsFailure(error.toString()));
+    yield put(fetchUnitsFailure(error.message));
   }
 }
 
-function* watchFetchUnits() {
-  yield takeEvery(fetchUnitsRequest.type, fetchUnits);
+function* rootSaga() {
+  yield takeEvery(fetchUnitsRequest.type, fetchUnitsSaga);
 }
 
-export default function* rootSaga() {
-  yield all([call(watchFetchUnits)]);
-}
+export default rootSaga;
