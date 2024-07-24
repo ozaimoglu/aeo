@@ -29,12 +29,6 @@ const unitSlice = createSlice({
         error: action.payload
       };
     },
-    fetchTestRequest(state) {
-      return {
-        ...state,
-        loading: false
-      };
-    }
   }
 });
 
@@ -42,7 +36,6 @@ export const {
   fetchUnitsRequest,
   fetchUnitsSuccess,
   fetchUnitsFailure,
-  fetchTestRequest
 } = unitSlice.actions;
 
 export default unitSlice.reducer;

@@ -1,7 +1,7 @@
 module.exports = {
   setupFilesAfterEnv: ["<rootDir>/src/setupTests.js"],
   collectCoverage: true,
-  collectCoverageFrom: ["src/components/**/*.{js,jsx,ts,tsx}"],
+  collectCoverageFrom: ["src/**/*.{js,jsx,ts,tsx}"],
   coverageThreshold: {
     global: {
       branches: 80,

@@ -35,10 +35,8 @@ describe("Filter Component", () => {
     render(<Filter filters={filters} setFilters={setFilters} />);
     const combobox = screen.getByRole("combobox");
 
-    // Open the dropdown
     fireEvent.mouseDown(combobox);
 
-    // Select the desired option
     fireEvent.click(screen.getByText(/Feudal/i));
 
     expect(setFilters).toHaveBeenCalledWith({ ...filters, age: "Feudal" });

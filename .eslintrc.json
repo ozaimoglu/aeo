@@ -25,10 +25,10 @@
     "no-console": "warn",
     "indent": ["error", 2],
     "comma-dangle": ["error", "never"],
-    "prettier/prettier": ["error"],
     "react/function-component-definition": "off",
     "radix": "off",
-    "no-param-reassign": ["error", { "props": false }]
+    "no-param-reassign": ["error", { "props": false }],
+    "prettier/prettier": ["error", { "endOfLine": "auto" }]
   },
   "settings": {
     "react": {

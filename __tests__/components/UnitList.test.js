@@ -2,7 +2,7 @@ import React from "react";
 import { render, screen, fireEvent } from "@testing-library/react";
 import { BrowserRouter as Router } from "react-router-dom";
 import UnitList from "../../src/components/UnitList";
-import "@testing-library/jest-dom"; // Ensure jest-dom is imported
+import "@testing-library/jest-dom";
 
 const units = [
   {

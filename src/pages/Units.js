@@ -32,6 +32,7 @@ const Units = () => {
   const filteredUnits = units.filter((unit) => {
     if (filters.age !== "All" && unit.age !== filters.age) return false; // Filter by age
     return Object.entries(filters.costs).every(([cost, isChecked]) => {
+      // Filter by cost
       if (isChecked) {
         const [min, max] = filters.costRanges[cost];
         const unitCost = unit.cost?.[cost] || 0; // there are null values in cost, so consider 0 if it's null

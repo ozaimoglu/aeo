@@ -6,6 +6,7 @@ import {
 } from "../slices/unitSlice";
 import unitsData from "../../age-of-empires-units.json";
 
+// fetch units data from unitsData and dispatch fetchUnitsSuccess action
 function* fetchUnitsSaga() {
   try {
     const { units } = unitsData;
@@ -15,6 +16,7 @@ function* fetchUnitsSaga() {
   }
 }
 
+// listen for fetchUnitsRequest action and call fetchUnitsSaga
 function* rootSaga() {
   yield takeEvery(fetchUnitsRequest.type, fetchUnitsSaga);
 }
