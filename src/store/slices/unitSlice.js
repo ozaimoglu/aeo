@@ -28,14 +28,11 @@ const unitSlice = createSlice({
         loading: false,
         error: action.payload
       };
-    },
+    }
   }
 });
 
-export const {
-  fetchUnitsRequest,
-  fetchUnitsSuccess,
-  fetchUnitsFailure,
-} = unitSlice.actions;
+export const { fetchUnitsRequest, fetchUnitsSuccess, fetchUnitsFailure } =
+  unitSlice.actions;
 
 export default unitSlice.reducer;
